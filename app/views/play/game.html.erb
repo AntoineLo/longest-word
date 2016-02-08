@@ -1,0 +1,19 @@
+
+<% start_time = Time.now %>
+
+<h2>Available letters:</h2>
+  <table>
+    <tr>
+    <% @grid.each do |letter| %>
+      <td><%= letter %></td>
+    <% end %>
+    </tr>
+  </table>
+
+<h3>Type in your guess:</h3>
+<form action="/score">
+  <input type="hidden" name="grid" value="<%= @grid.join %>" >
+  <input type="text" name="guess" id="guess">
+  <input type="hidden" name="time" value="<%= (Time.now - start_time) %>" >
+  <input type="submit" value="Try !">
+</form>
