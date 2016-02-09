@@ -1,3 +1,27 @@
 // Place all the styles related to the play controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card {
+  padding: 50px 100px;
+}
+
+.letter {
+  border-radius: 3px;
+  background-color: orange;
+  color: white;
+}
+
+li {
+  font-size: 18px;
+  color: rgb(150,150,150);
+}
+
+.guess {
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  margin: 0px 200px;
+  background-color: orange;
+  border-radius: 5px;
+}

@@ -1,10 +1,24 @@
 
-<h2>Your guess:</h2>
-<h3><%= @guess %></h3>
+<div class="container">
+  <div class="card text-center">
+    <div class="current-score text-center">
+      <h2>Your guess:</h2>
+      <h3 class="guess"><%= @guess.capitalize %></h3>
+      <h2>Your score:</h2>
+      <h4><%= @score[0] %><%= " - " + @score[1] unless @score[1] == "well done" %></h4>
+    </div>
+    <h3>Previous scores:</h3>
+    <ul class="list-unstyled">
+      <% session[:attempts].each do |key, value| %>
+      <li>Score = <%= value[0] %></li>
+      <% end %>
+    </ul>
+    <br><br>
+    <%= link_to "Play again", game_path, class: "btn btn-primary" %>
+    <br><br>
+    <form action="reset" method="post">
+      <input type="submit" name="reset" id="reset" class="btn btn-danger" value="Reset all scores">
+    </form>
+  </div>
+</div>
 
-<h2>Your score:</h2>
-<h2><%= @score[0] %> - <%= @score[1] %></h2>
-
-<br><br>
-
-<%= link_to "Play again", game_path %>

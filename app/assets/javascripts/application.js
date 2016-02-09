@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('#reset').click(function() {
+  alert('Are you sure you want to erase all previous score?')
+});

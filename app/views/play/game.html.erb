@@ -1,19 +1,17 @@
+<div class="container text-center">
+  <div class="card">
+    <h2>Available letters:</h2>
+      <ul class="list-inline">
+        <% @grid.each do |letter| %>
+          <li class="letter"><%= letter %></li>
+        <% end %>
+      </ul>
 
-<% start_time = Time.now %>
-
-<h2>Available letters:</h2>
-  <table>
-    <tr>
-    <% @grid.each do |letter| %>
-      <td><%= letter %></td>
-    <% end %>
-    </tr>
-  </table>
-
-<h3>Type in your guess:</h3>
-<form action="/score">
-  <input type="hidden" name="grid" value="<%= @grid.join %>" >
-  <input type="text" name="guess" id="guess">
-  <input type="hidden" name="time" value="<%= (Time.now - start_time) %>" >
-  <input type="submit" value="Try !">
-</form>
+    <form action="/score" class="form-inline">
+      <input type="hidden" name="grid" value="<%= @grid.join %>" >
+      <input type="text" class="form-control" name="guess" id="guess">
+      <input type="hidden" name="start_time" value="<%= Time.now %>" >
+      <input type="submit" value="Try !" class="btn btn-primary">
+    </form>
+  </div>
+</div>
